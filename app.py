@@ -5,7 +5,7 @@ from core import ask_friday, stream_friday
 import logging, traceback
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-app = Flask(__name__)
+app = Flask(__name__, static_folder="core/static", template_folder="core/static/templates")
 
 @app.get("/")
 def index(): return render_template("index.html")
